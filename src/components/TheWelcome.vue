@@ -143,8 +143,7 @@ export default {
         produccion_rules.push([simVariable.value, cadenas])
         vertical_varRule.push(simVariable.value)
         dict_produccion_rule.value[simVariable.value] = cadenas
-
-        
+ 
         rule = []
         simVariable.value = ""
         cadenasProduccion.value = ""
@@ -184,7 +183,6 @@ export default {
              * retorna -1 si es que la cadena no inicia con ninguna variable
              */
             indexInclude = isInclude(body_rule[j], list_Variable.value);
-            
             
             /**
              * Si la cadena evaluada no inicia con una variable entonces...
@@ -238,7 +236,6 @@ export default {
                  * del conjunto Primero sera el simbolo terminal con el que inicia la cadena.
                  */
 
-
                 list_Terminal.value.push(body_rule[j][0])
                 console.log(`Primero(${head_rule}) = {${body_rule[j][0]}}`);
                 primeros.value[head_rule].push(body_rule[j][0])
@@ -278,12 +275,8 @@ export default {
                   
                   
                   console.log(`Primero(${head_rule}) = {${resp_recurs.toLocaleString()}}`);
-                
-                 
+                    
             }
-
-
-
 
           }
 

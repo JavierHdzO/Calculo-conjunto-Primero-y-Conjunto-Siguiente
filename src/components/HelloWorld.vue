@@ -9,10 +9,13 @@ defineProps({
 
 <template>
   <div class="greetings">
+    <h1>Sistemas Base II</h1>
     <h1 class="green">{{ msg }}</h1>
-    <h3>
+    <h4>
       <a href="http://www.franciscohdzo.com">Francisco Javier Hernandez Ortiz</a>
-    </h3>
+      <a href="#">Sistemas Base II</a>
+      <p>9-G</p>
+    </h4>
   </div>
 </template>
 

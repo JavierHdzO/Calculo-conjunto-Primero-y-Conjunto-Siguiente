@@ -21,8 +21,6 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
      */
     repeticiones[head]++
 
-    console.log(head);
-
     /**
      * Si la variable stop tiene como contenido false, indica que la recursión se ha detenido, porque se cumpli con 
      * la condición de paro.
@@ -39,19 +37,15 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
      * con la recursión.
      */
     else if( produccion_rules[head] ){
-        
-        
+
             /**
              * Se asigna las reglas de producción a evaluar para su union aplicando la tercera regla a una varaible
              * llamada body_rule, con el fin de ser mas facil su obtenición
              */
             let body_rule = produccion_rules[head]
             
-            
             for (let j = 0; j < body_rule.length; j++) {
                 
-                
-
                 indexInclude = isInclude(body_rule[j], vertical_varRule);
     
                 if (indexInclude === -1) {
@@ -66,12 +60,9 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
                   } 
                   else {
                     /**
-                     * Cuando la caden empieza con un terminal no definido en el conjunto de terminales
+                     * Cuando la cadena empieza con un terminal no definido en el conjunto de terminales
                      */
-
-                    // list_Terminal.push(body_rule[j][0])
                     set.add(body_rule[j][0])
-    
                   }
     
                 } else {
@@ -79,20 +70,10 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
                    * Cuando el contado de la variable que se esta evaluando sea mayor a 1, significa que se entrata a una recursión
                    * infitinica, por lo que ya no es necesario seguir con dicha recursión y se debe deter, para la unión de todos los
                    * resultado obtenidos durante la evaluación, se envia stop = false
-                   * 
                    */
-                    
                     if(repeticiones[head] > 1){
                         answer =  recursive(vertical_varRule, vertical_varRule[indexInclude], produccion_rules, list_Terminal, repeticiones, false )
 
-                        /**
-                         * Se agregan los resultados obtenidos en la estructura set ( para descartar los simbolos repetidos), la condición impide que se agreguen
-                         * cadenas de texto vacias
-                         */
-                        answer.forEach( d => {
-                            if(d !== "")
-                            set.add(d)
-                        })
                     }else{
                         /**
                          * Se puede seguir con la recursión, debido a que no se ha llegado al limite de la recursión (no se encuentra en peligro de entrar en un
@@ -100,31 +81,23 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
                          */
                         answer =  recursive(vertical_varRule, vertical_varRule[indexInclude], produccion_rules, list_Terminal,  repeticiones, true )
 
-                        /**
-                         * Se agregan los resultados obtenidos en la estructura set ( para descartar los simbolos repetidos), la condición impide que se agreguen
-                         * cadenas de texto vacias
-                         */
-                        answer.forEach( d => {
-                            if(d !== "")
-                            set.add(d)
-                        })
                     }
-    
-    
+                    
+                    /**
+                     * Se agregan los resultados obtenidos de la funcuon de recursividad en la estructura set ( para descartar los simbolos repetidos), la condición impide que se agreguen
+                     * cadenas de texto vacias
+                     */
+                    answer.forEach( d => {
+                        if(d !== "")
+                        set.add(d)
+                    })
     
                 }
-
                 
-
             }
-
             
-
             return [...set]
             
-        // }
-
-
     }else{
         /**
          * Si la variable no se encuentra en las variables de que producen las reglas de producción, entonces se regresa 
@@ -133,6 +106,5 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
 
         return ["#"]
     }
-
 
 }
