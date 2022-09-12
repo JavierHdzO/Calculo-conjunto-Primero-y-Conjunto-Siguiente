@@ -1,4 +1,4 @@
-This is an schoolar project ( no clean code, optimization code and etc)
+## This is an schoolar project ( no clean code, no optimization code and etc)
 
 # 01-ConjuntoPrimeroSiguiente
 
