@@ -1,0 +1,75 @@
+a)
+M => NPq|qt|r
+N => t|PN
+P => `MN|rt` 
+
+b)
+X => aX'|bX'
+X' => abX'|@
+Y => bZ
+Z => ab
+
+c)
+E => TE'
+E' => +TE'|-TE'|@
+T => FT'
+T' => *FT'|/FT'|@
+F => id|num|(E)
+
+d)
+if => (CONDICION)|then|else
+condicion => exp1OPexp2
+op => <|<=|>|>=|!=|=
+
+e)
+I => LI'
+I' => LI'|DI'|@
+L => a|b|z
+D => 0|1|9
+
+f)
+
+
+
+
+CALCULO DE CONJUTNO SIGUIENTE
+
+a)
+
+IF -> (CONDICION)|then|else
+CONDICION -> expr1OPexpr2
+OP -> >|>=|<|<=|=|==|!=
+
+
+b)
+
+S -> 0S0|01
+A -> SB|0
+B -> 1
+
+C)
+
+X -> YZ|bY
+X' -> aZ|@
+Y -> ab|ZX
+Z -> b
+
+
+d)
+
+M -> nPt|t|r
+P -> rt|Mn
+
+
+e)
+
+A -> B01C|10|0
+B -> 1|@
+C -> A1|D0
+D
+
+f)
+
+S-> baBA|a
+A-> Sb|@
+B-> abba

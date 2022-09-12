@@ -23,3 +23,17 @@ export const isInclude = ( cadena = "", list_var = [] ) => {
 
     return miIndex
 }
+
+export const isIncludeStrict = (cadena = "", variable  = "") => {
+
+    const index = cadena.indexOf( variable)
+    if( index != -1 ){
+        const index2 = cadena.indexOf( variable+"'" );
+        if( index != index2){
+            return index;
+        }
+
+    }
+    
+    return -1;
+}

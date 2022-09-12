@@ -43,6 +43,7 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
              * llamada body_rule, con el fin de ser mas facil su obtenición
              */
             let body_rule = produccion_rules[head]
+            console.log(body_rule);
             
             for (let j = 0; j < body_rule.length; j++) {
                 
@@ -55,7 +56,7 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
                   if (indexInclude != -1) {
                     set.add(list_Terminal[indexInclude])
                   }
-                  else if(body_rule[j].trim() === "$"){
+                  else if(body_rule[j].trim() === "@"){
                     set.add(body_rule[j])
                   } 
                   else {
@@ -104,7 +105,8 @@ export const recursive = (vertical_varRule,head, produccion_rules = {}, list_Ter
          * un conjunto vacio denotado por "#"
          */
 
-        return ["#"]
+        return [""]
     }
 
 }
+
